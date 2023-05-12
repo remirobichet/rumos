@@ -6,16 +6,23 @@
   "type": "module",
   "bin": "./index.js",
   "engines": {
-		"node": ">=16.0.0"
-	},
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "start": "node index.js"
   },
-  
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "enquirer": "^2.3.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://https://github.com/remirobichet/rumos.git"
+  },
+  "bugs": {
+    "url": "https://https://github.com/remirobichet/rumos/issues"
+  },
+  "homepage": "https://https://github.com/remirobichet/rumos/#readme"
 }
