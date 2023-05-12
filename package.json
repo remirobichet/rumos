@@ -1,0 +1,21 @@
+{
+  "name": "rumos",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "bin": "./index.js",
+  "engines": {
+		"node": ">=16.0.0"
+	},
+  "scripts": {
+    "start": "node index.js"
+  },
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "enquirer": "^2.3.6"
+  }
+}
