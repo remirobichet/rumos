@@ -78,4 +78,8 @@ const { script } = await prompt({
 
 let cmd = `pnpm ${isRoot ? '' : `-F ${pkg.default.name}`} ${script}`
 
-execSync(cmd, { stdio: 'inherit' });
+try {
+  execSync(cmd, { stdio: 'inherit', shell: '/bin/bash' });
+} catch (err) {
+  /* Not output error from this script */
+}
