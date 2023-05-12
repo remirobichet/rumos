@@ -15,7 +15,7 @@
 
 ## Install
 
-Install moru as dev dependancy
+Install rumos as dev dependancy
 
 `pnpm -w add rumos --save-dev`
 
