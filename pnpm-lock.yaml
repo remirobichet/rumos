@@ -2,9 +2,11 @@ lockfileVersion: 5.4
 
 specifiers:
   enquirer: ^2.3.6
+  suppress-experimental-warnings: ^1.1.17
 
 dependencies:
   enquirer: 2.3.6
+  suppress-experimental-warnings: 1.1.17
 
 packages:
 
@@ -18,4 +20,16 @@ packages:
     engines: {node: '>=8.6'}
     dependencies:
       ansi-colors: 4.1.3
+    dev: false
+
+  /jiti/1.18.2:
+    resolution: {integrity: sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==}
+    hasBin: true
+    dev: false
+
+  /suppress-experimental-warnings/1.1.17:
+    resolution: {integrity: sha512-n1huqqtVdNSTV04x0lC9gfBsCl6X+RRA10B6VTw8kQjrNbkwkU6DJB/qTbQFjO+ItYT9VbGe3NvuS4XWq5vUEQ==}
+    engines: {node: '>=14'}
+    dependencies:
+      jiti: 1.18.2
     dev: false

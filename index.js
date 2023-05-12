@@ -1,5 +1,7 @@
 #! /usr/bin/env node
 
+import 'suppress-experimental-warnings';
+
 import enquirer from 'enquirer'
 import { exec, execSync } from 'child_process'
 import path from 'path'
