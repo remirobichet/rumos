@@ -1,7 +1,7 @@
 {
   "name": "rumos",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.2",
+  "description": "🛠️ CLI tool to run faster monorepo scripts",
   "main": "index.js",
   "type": "module",
   "bin": "./index.js",
@@ -19,10 +19,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://https://github.com/remirobichet/rumos.git"
+    "url": "git+https://github.com/remirobichet/rumos.git"
   },
   "bugs": {
-    "url": "https://https://github.com/remirobichet/rumos/issues"
+    "url": "https://github.com/remirobichet/rumos/issues"
   },
-  "homepage": "https://https://github.com/remirobichet/rumos/#readme"
+  "homepage": "https://github.com/remirobichet/rumos/#readme"
 }
