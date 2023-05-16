@@ -11,9 +11,13 @@
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "cli",
+    "monorepo",
+    "run-script"
+  ],
+  "author": "Rémi Robichet <remi.robichet@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^5.2.0",
     "enquirer": "^2.3.6",
