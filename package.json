@@ -1,6 +1,6 @@
 {
   "name": "rumos",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "🛠️ CLI tool to run faster monorepo scripts",
   "main": "index.js",
   "type": "module",
