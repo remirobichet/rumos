@@ -1,1 +1,7 @@
 node_modules/
+
+# local testing monorepo
+pnpm-workspace.yaml
+apps
+packages
+data-access-layers

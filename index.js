@@ -3,6 +3,7 @@
 import 'suppress-experimental-warnings';
 
 import enquirer from 'enquirer'
+import chalk from 'chalk';
 import { exec, execSync } from 'child_process'
 import path from 'path'
 
@@ -23,7 +24,7 @@ const workspacesObjects = await new Promise((resolve, reject) => {
     resolve(JSON.parse(stdout));
   });
 })
-const workspacesPath = workspacesObjects.map(object => path.relative(__dirname, object.path))
+const workspacesPath = workspacesObjects.map(object => path.relative(__dirname, object.path)).sort((a, b) => a.includes('/') - b.includes('/'))
 
 const workspacesGroups = workspacesPath.reduce((acc, path) => {
   if (!path.includes('/')) {
@@ -42,22 +43,34 @@ const workspacesGroups = workspacesPath.reduce((acc, path) => {
   return acc
 }, {})
 
+
+let char, subChar
+let sepLastChar = chalk.gray("└─")
+let sepChar = chalk.gray("├─")
+let subSepLastChar = chalk.gray(" ")
+let subSepChar = chalk.gray("│")
 const workspaceChoices = Object.keys(workspacesGroups).reduce((acc, group, i, arr) => {
+  char = i === arr.length - 1 ? sepLastChar : sepChar
+  subChar = i === arr.length - 1 ? subSepLastChar : subSepChar
+
   if (i !== 0) {
-    acc.push({ message: ` --- ${group.charAt(0).toUpperCase() + group.slice(1)} --- `, role: 'separator' })
+    acc.push({ message: chalk.gray(` ${char}📁 ${group}/`), role: 'separator' })
   }
   if (group === 'root') {
-    acc.push({ message: 'Root', value: '/' })
+    acc.push({ message: ` ${char} (root)`, value: '/' })
   } else {
-    workspacesGroups[group].forEach(el => acc.push({ message: el, value: `/${group}/${el}` }))
+    workspacesGroups[group].forEach((el, iEl, arrEl) => {
+      const elChar = iEl === arrEl.length - 1 ? sepLastChar : sepChar
+      acc.push({ message: ` ${subChar}  ${elChar} ${el ? el : '(root)'}`, value: `/${group}/${el}` })
+    })
   }
   return acc
-}, [])
+}, [{ message: chalk.gray(`📁 /`), role: 'separator' }])
 
 const { workspace } = await prompt({
   type: 'select',
   name: 'workspace',
-  message: 'Select workspace to run',
+  message: 'Select workspace',
   choices: workspaceChoices
 })
 
